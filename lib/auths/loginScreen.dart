@@ -63,6 +63,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 MainButton(
                   Onpressad: () {
+                    print("Hello world");
+                  },
+                  color: Colors.white,
+                  title: "Facebook",
+                ),
+                MainButton(
+                  Onpressad: () {
                     Get.to(SignUp());
                   },
                   color: Colors.green,
