@@ -9,8 +9,8 @@ class FireAuths {
     try {
       await _auth
           .createUserWithEmailAndPassword(email: _email, password: _password)
-          .then((value) async {
-        Navigator.of(context)
+          .then((_) async {
+        await Navigator.of(context)
             .push(MaterialPageRoute(builder: (_) => NewScreen()));
       });
     } catch (e) {
