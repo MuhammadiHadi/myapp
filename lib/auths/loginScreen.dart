@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:myapp/auths/authsServies.dart';
+import 'package:myapp/auths/signupPage.dart';
 import 'package:myapp/customWidget/customTextFiled.dart';
 
 import '../customWidget/mainButton.dart';
@@ -49,12 +51,22 @@ class _LoginScreenState extends State<LoginScreen> {
                   color: Colors.green,
                   title: "LOGIN",
                 ),
+                SizedBox(
+                  height: 50,
+                ),
                 MainButton(
                   Onpressad: () {
-                    FireAuths.SignIn(_email.text, _password.text, context);
+                    FireAuths.GoogleSignIn();
                   },
                   color: Colors.white,
                   title: "Google",
+                ),
+                MainButton(
+                  Onpressad: () {
+                    Get.to(SignUp());
+                  },
+                  color: Colors.green,
+                  title: "SignUp >",
                 ),
               ],
             ),

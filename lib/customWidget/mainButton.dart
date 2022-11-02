@@ -14,7 +14,7 @@ class MainButton extends StatelessWidget {
       child: Container(
         height: MediaQuery.of(context).size.height * 0.05,
         width: double.infinity,
-        margin: EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+        margin: EdgeInsets.symmetric(horizontal: 25, vertical: 5),
         decoration: BoxDecoration(
             color: color, border: Border.all(width: 0.8, color: Colors.pink)),
         child: Center(
