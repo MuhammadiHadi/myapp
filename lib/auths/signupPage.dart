@@ -1,5 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp/Screen/newScreen.dart';
 import 'package:myapp/auths/authsServies.dart';
+
+import '../customWidget/mainButton.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -11,6 +15,7 @@ class SignUp extends StatefulWidget {
 class _SignUpState extends State<SignUp> {
   TextEditingController email_controller = TextEditingController();
   TextEditingController password_controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,26 +69,14 @@ class _SignUpState extends State<SignUp> {
               SizedBox(
                 height: 50,
               ),
-              InkWell(
-                onTap: () {
-                  FireAuths.SignUp(email_controller.toString(),
-                      password_controller.toString(), context);
+              MainButton(
+                Onpressad: () {
+                  FireAuths.SignUp(
+                      email_controller.text, password_controller.text, context);
                 },
-                child: Container(
-                  height: 45,
-                  width: double.infinity,
-                  margin: EdgeInsets.symmetric(horizontal: 25),
-                  decoration: BoxDecoration(color: Colors.blueGrey),
-                  child: Center(
-                      child: Text(
-                    "SignUp",
-                    style: TextStyle(
-                        fontSize: 25,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600),
-                  )),
-                ),
-              ),
+                color: Colors.green,
+                title: "SignUp",
+              )
             ],
           ),
         ),
